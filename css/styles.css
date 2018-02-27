@@ -24,12 +24,16 @@ body {
 
 .app-component .app-photo {
     width: calc(100% - 20px);
-    height: auto !important;
 
     margin: 10px;
     border: 1px solid;
     border-radius: 10px;
     box-sizing: border-box;
+}
+
+.app-component .app-photo.app-photo-loading {
+    height: 200px;
+    background-color: lightgrey;
 }
 
 @media (min-width: 1200px) {

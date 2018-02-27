@@ -7,7 +7,7 @@
     AppComponent.prototype.appendPhotos = function() {
         var self = this;
 
-        app.photosService.getPhotosPlaceholders(
+        app.photosService.getPhotos(
             this.loadedPhotos,
             app.config.PHOTOS_CHUNK
         ).done(function(photos) {
@@ -15,7 +15,14 @@
 
             for (var i in photos) {
                 var photo = photos[i];
-                var photoElement = $("<img>").addClass("app-photo").attr("src", photo.url);
+                var photoElement = $("<img>")
+                    .addClass("app-photo")
+                    .addClass("app-photo-loading")
+                    .attr("src", photo.url);
+
+                photoElement.on("load", function() {
+                    $(this).removeClass("app-photo-loading");
+                });
 
                 self.element.append(photoElement);
             }

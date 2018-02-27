@@ -1,0 +1,22 @@
+{
+  "name": "fe-intern-test",
+  "version": "1.0.0",
+  "description": "Implement photo gallery which will load new chunk of photos every time you scroll to the bottom of it (infinite scroll).\r It should be something like [Pinterest](https://www.pinterest.com) or [500px](https://500px.com/editors).\r Server with endpoint providing photos is [here](https://codewise-fe-api.herokuapp.com/photos).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ahmore/fe-intern-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ahmore/fe-intern-test/issues"
+  },
+  "homepage": "https://github.com/Ahmore/fe-intern-test#readme",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}

@@ -26,3 +26,8 @@
     Good luck!
 
 */
+
+
+(function(window) {
+    window.app = window.app || {};
+})(window);

@@ -1,16 +1,26 @@
 (function (app) {
     function Scroller() {
-        this.timer;
+        this.scrollTimer = null;
+        this.resizeTimer = null;
 
         $(window).scroll(this.onScroll.bind(this));
+        $(window).resize(this.onResize.bind(this));
     }
 
     Scroller.prototype.onScroll = function() {
-        if (this.timer) {
-            clearTimeout(this.timer);
+        if (this.scrollTimer) {
+            clearTimeout(this.scrollTimer);
         }
 
-        this.timer = setTimeout(this.handleScroll.bind(this), app.config.SCROLLER_DELAY);
+        this.scrollTimer = setTimeout(this.handleScroll.bind(this), app.config.SCROLLER_DELAY);
+    };
+
+    Scroller.prototype.onResize = function() {
+        if (this.resizeTimer) {
+            clearTimeout(this.resizeTimer);
+        }
+
+        this.resizeTimer = setTimeout(this.handleScroll.bind(this), app.config.SCROLLER_DELAY);
     };
 
     Scroller.prototype.handleScroll = function() {

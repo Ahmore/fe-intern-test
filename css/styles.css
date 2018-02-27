@@ -3,16 +3,60 @@ body {
     padding: 0;
 }
 
-.app-component {
+.app-header {
+    text-align: center;
 
+    font-size: 30px;
+    font-family: "Comic Sans MS";
+}
+
+.app-component {
+    line-height: 0;
+    padding: 10px;
+
+    -webkit-column-count: 2;
+    -webkit-column-gap:   0;
+    -moz-column-count:    2;
+    -moz-column-gap:      0;
+    column-count:         2;
+    column-gap:           0;
 }
 
 .app-component .app-photo {
-    max-width: 50%;
-    max-height: 400px;
+    width: calc(100% - 20px);
+    height: auto !important;
 
+    margin: 10px;
     border: 1px solid;
+    border-radius: 10px;
     box-sizing: border-box;
+}
 
-    float: left;
+@media (min-width: 1200px) {
+    .app-component {
+        -moz-column-count:    4;
+        -webkit-column-count: 4;
+        column-count:         4;
+    }
+}
+@media (max-width: 1200px) {
+    .app-component {
+        -moz-column-count:    3;
+        -webkit-column-count: 3;
+        column-count:         3;
+    }
+}
+@media (max-width: 1000px) {
+    .app-component {
+        -moz-column-count:    2;
+        -webkit-column-count: 2;
+        column-count:         2;
+    }
+}
+@media (max-width: 400px) {
+    .app-component {
+        -moz-column-count:    1;
+        -webkit-column-count: 1;
+        column-count:         1;
+    }
 }
